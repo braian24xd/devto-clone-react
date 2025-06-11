@@ -1,0 +1,260 @@
+html,
+body {
+    background: #F6F6F6;
+}
+
+header {
+    background: $bgFrames;
+    box-shadow: 0px 2px 1px $borderColor;
+
+    .header {
+        margin: 0 auto;
+        padding: 8px 20px;
+        max-width: 1380px;
+
+        @include flexBox;
+
+        &__search {
+            @include flexBox;
+
+            &--logo {
+                width: 50px;
+            }
+
+            &--search {
+                width: 400px;
+                height: 40px;
+                border: 1px solid $borderColor;
+                @include fontConfig(16, 400, $primaryFontColor);
+                @include laptops {
+                    width: 300px;
+                }
+                @include tablets {
+                    display: none;
+                }
+            }
+        }
+
+        &__buttons {
+            @include flexBox;
+        }
+
+        &__user {
+            hr {
+                border: 1px solid $borderColor;
+            }
+            .dropdownOptions {
+                position: absolute;
+                z-index: 2;
+                background: $bgFrames;
+                border: 1px solid $borderColor;
+                border-radius: 5px;
+                box-shadow: 0px 2px 1px $borderColor;
+                margin-top: 8px;
+                list-style: none;
+                padding: 10px;
+            }
+        }
+    }
+}
+
+section {
+    border-radius: 5px;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1380px;
+    @include flexBox($alignItems: flex-start)
+}
+
+.links {
+    width: 270px;
+    @include tablets {
+        display: none;
+    }
+
+    &__presentation {
+        padding: 20px;
+        background: $bgFrames;
+        box-shadow: 1px 1px 1px $borderColor;
+
+        &--caption {
+            margin: 20px 0;
+            @include fontConfig(16, 400, $secondaryFontColor);
+        }
+
+        button {
+            margin: 10px auto;
+            width: 100%;
+            display: block;
+        }
+    }
+
+    &__navigation {
+        margin: 20px 0;
+
+        h3 {
+            margin: 10px 0;
+        }
+
+        .primary__btn,
+        .secondary__btn,
+        .img__btn {
+            width: 100%;
+        }
+
+        nav {
+            .tag {
+                padding: 0px 20px;
+            }
+        }
+
+        &--social {
+            margin: 20px 0;
+            @include flexBox($wrap: wrap, $gap: 5px, $justifyContent: flex-start, $alignItems: flex-start);
+        }
+    }
+}
+
+.main {
+    width: 50%;
+    @include laptops {
+        width: 100%;
+    }
+
+    &__order {
+        button {
+            padding: 10px;
+        }
+    }
+
+    &__banner {
+        margin: 20px 0;
+        padding: 20px;
+        background: $bgFrames;
+        box-shadow: 0px 2px 1px $borderColor;
+
+        &--caption {
+            color: $secondaryFontColor;
+        }
+
+        &--img {
+            margin: 10px auto;
+            width: 90%;
+            display: block;
+        }
+
+        &--title {
+            margin: 20px 0;
+            text-align: center;
+        }
+    }
+
+    &__posts {
+        margin: 10px 0;
+    }
+}
+
+.social {
+    width: 350px;
+    @include laptops{
+        display: none;
+    }
+
+    &__challenges {
+        padding: 20px;
+        background: $bgFrames;
+        box-shadow: 0px 2px 1px $borderColor;
+
+        &--title {
+            margin: 20px 0 10px;
+        }
+    }
+
+    &__watercooler,
+    &__discuss {
+        margin: 20px 0;
+        padding: 20px 20px 0;
+        background: $bgFrames;
+        box-shadow: 0px 2px 1px $borderColor;
+
+        &--caption {
+            margin: 10px 0 20px;
+            display: block;
+        }
+    }
+}
+
+.profile {
+    @include flexBox($direction: column);
+    &__frontpage {
+        width: 100%;
+        height: 130px;
+        background: $primaryFontColor;
+        border-radius: 0;
+        box-shadow: 0px 2px 1px $borderColor;
+        position: absolute;
+        z-index: 0;
+    }
+
+    &__bio {
+        margin: 80px auto;
+        padding: 20px;
+        width: 992px;
+        background: $bgFrames;
+        position: absolute;
+        z-index: 1;
+        @include flexBox($direction: column);
+
+        &--photo {
+            width: 128px;
+            border: 8px solid $primaryFontColor;
+            border-radius: 50%;
+            position: absolute;
+            margin-top: -60px;
+        }
+
+        &--name {
+            margin-top: 100px;
+        }
+    }
+
+    &__content {
+        margin: 350px auto 20px;
+        width: 992px;
+        @include flexBox($justifyContent: space-between, $alignItems: flex-start);
+
+        .content__metrics {
+            padding: 20px;
+            width: 300px;
+            background: $bgFrames;
+            @include fontConfig(16, 400, $secondaryFontColor);
+
+            p {
+                margin: 20px 0;
+            }
+        }
+
+        .content__posts {
+            width: 90%;
+        }
+    }
+}
+
+.single__post {
+    height: 90vh;
+    @include flexBox($justifyContent: center, $alignItems: center);
+
+    &--warning {
+        margin: -20px 0;
+        text-align: center;
+    }
+
+    .post {
+        margin: 20 auto;
+        max-width: 960px;
+        background: $bgFrames;
+    }
+}

@@ -1,0 +1,235 @@
+.primary__btn {
+    @include button(transparent, $colorPrimary, 1px solid $colorPrimary);
+    &:hover {
+        background: $colorPrimary;
+        color: $bgFrames
+    }
+}
+
+.secondary__btn {
+    @include button(transparent, $secondaryFontColor, none);
+    &:hover {
+        background: $colorPrimary--rgba;
+    }
+}
+
+.img__btn {
+    @include button(transparent, $secondaryFontColor, none);
+    @include flexBox($justifyContent: flex-start, $gap: 10px);
+    img {
+        width: 20px;
+    }
+    &:hover {
+        background: $colorPrimary--rgba;
+    }
+}
+
+.img__btn--single {
+    width: 40px;
+    height: 40px;
+    @include button(transparent, $secondaryFontColor, none);
+    @include flexBox($gap: 0, $justifyContent: center);
+
+    img {
+        width: 20px;
+        height: 20px;
+    }
+
+    &:hover {
+        background: $colorPrimary--rgba;
+    }
+}
+
+.indicator {
+    padding: 3px;
+    background: $warningColor;
+    border-radius: 5px;
+    @include fontConfig(14, 400, $primaryFontColor);
+}
+
+.tag {
+    margin: 20px 0;
+    @include fontConfig(16px, 400, $secondaryFontColor);
+    text-decoration: none;
+    display: block;
+}
+
+.challenge__article {
+    margin: 10px 0;
+    padding: 10px;
+    border: 2px solid $primaryFontColor;
+    border-radius: 5px;
+
+    &--title {
+        @include fontConfig(16, 400, $secondaryFontColor);
+    }
+
+    &--img {
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    &--url {
+        @include fontConfig(16, 700, $colorPrimary);
+        display: block;
+    }
+
+    &--description {
+        margin: 10px 0;
+        font-style: italic;
+        @include fontConfig(16, 400, $secondaryFontColor);
+    }
+}
+
+.discuss__item {
+    padding: 20px 0;
+    border-top: 1px solid $borderColor;
+    border-bottom: 1px solid $borderColor;
+    
+    &--title {
+        margin: 0 0 10px;
+        @include fontConfig(16px, 400, $secondaryFontColor);
+    }
+
+    &--comments {
+        @include fontConfig(14px, 400, $secondaryFontColor);
+    }
+}
+
+.post {
+    margin: 10px 0;
+    background: $bgFrames;
+    border-radius: 10px;
+    box-shadow: 0px 2px 1px $borderColor;
+
+    textarea {
+        width: 100%;
+        border: 1px solid $borderColor;
+        border-radius: 10px;
+        @include fontConfig(16, 700, $primaryFontColor);
+    }
+
+    &__img {
+        width: 100%;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    &__photo {
+        img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+        }
+    }
+
+    &__header {
+        @include flexBox($gap: 2px, $direction: column, $justifyContent: flex-start, $alignItems: flex-start);
+
+        strong {
+            @include fontConfig(14, 500, $secondaryFontColor);
+        }
+    }
+
+    &__body {
+        margin: 20px 0;
+        
+        &--caption {
+            margin-bottom: 15px;
+            @include fontConfig(30, 700, $primaryFontColor);
+        }
+
+        &--tags {
+            @include fontConfig(14, 400, $secondaryFontColor);
+
+            span {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    &__footer {
+        @include flexBox;
+
+        &--reactions {
+            @include flexBox($gap: 10px);
+        }
+
+        &--info {
+            @include flexBox($gap: 10px);
+        }
+    }
+
+    .group__body {
+        padding: 20px;
+        @include flexBox($gap: 10px, $justifyContent: stretch, $alignItems: flex-start)
+    }
+
+    .group__items {
+        width: 100%;
+    }
+}
+
+.post__form {
+    padding: 20px;
+    background: $bgFrames;
+    box-shadow: 0px 2px 1px $borderColor;
+    @include flexBox($gap: 10px, $justifyContent: flex-start, $alignItems: flex-start);
+
+    &--photo {   
+        width: 45px;
+        height: 45px;
+        border: 1px solid $borderColor;
+        border-radius: 50%;
+    }
+
+    form {
+        width: 100%;
+
+        textarea {
+            padding: 10px;
+            width: 100%;
+            border: 1px solid $borderColor;
+            border-radius: 10px;
+            @include fontConfig(16, 400, $primaryFontColor)
+        }
+
+        button {
+            margin: 10px 0 0 auto;
+            display: block;
+        }
+    }
+}
+
+.login {
+    padding: 40px 20px;
+    width: 450px;
+    max-width: 450px;
+    background: $bgFrames;
+    box-shadow: 0px 2px 1px $borderColor;
+    @include flexBox($direction: column);
+
+    &__logo {
+        width: 60px;
+    }
+
+    p {
+        text-align: center;
+        @include fontConfig(16, 400, $secondaryFontColor);
+    }
+
+    &__form {
+        width: 100%;
+        @include flexBox($direction: column, $gap: 10px, $alignItems: stretch);
+
+        label {
+            @include fontConfig(16, 500, $primaryFontColor)
+        }
+
+        input {
+            padding: 10px;
+            border: 1px solid $borderColor;
+            border-radius: 5px;
+        }
+    }
+}

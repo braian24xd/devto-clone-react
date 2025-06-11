@@ -1,0 +1,33 @@
+$bgPrimary: #F6F6F6;
+$bgFrames : #FFF;
+$fontFamily: "Roboto", Arial, Helvetica, sans-serif;
+$colorPrimary: #3B49DF;
+$warningColor: #FCD34D;
+$colorPrimary--rgba: rgba(59, 73, 223, 0.1);
+$primaryFontColor: #000;
+$secondaryFontColor: #444;
+$borderColor: #E5E7EB;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    @include fontConfig(32, 700, $primaryFontColor);
+}
+
+h2 {
+    @include fontConfig(20, 700, $primaryFontColor);
+}
+
+small {
+    @include fontConfig(13, 400, $secondaryFontColor);
+}
+
+a {
+    text-decoration: none;
+    @include fontConfig(16, 400, $colorPrimary);
+}

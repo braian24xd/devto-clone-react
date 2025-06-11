@@ -1,0 +1,44 @@
+@mixin flexBox ($direction: row, $wrap: nowrap, $gap: 20px, $justifyContent: space-between, $alignItems: center) {
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    gap: $gap;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}
+
+@mixin fontConfig($size, $weight, $color) {
+    font-size: convertPx($size);
+    font-weight: $weight;
+    color: $color;
+}
+
+@mixin button ($bgColor, $fontColor, $border) {
+    padding: 10px 20px;
+    background: $bgColor;
+    color: $fontColor;
+    font-size: convertPx(16);
+    font-weight: 400;
+    border: $border;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+@mixin laptops {
+    @media (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin tablets {
+    @media (max-width: 768px){
+        @content;
+    }
+}
+
+@mixin phones {
+    @media (max-width: 520px){
+        @content;
+    }
+}
