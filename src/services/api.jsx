@@ -103,7 +103,7 @@ export async function loginUser(data) {
 
 export async function registerUser(data) {
   try {
-    const res = await fetch(`${API_BASE_URL}/auth/register`, {
+    const res = await fetch(`${API_BASE_URL}/users/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -112,10 +112,9 @@ export async function registerUser(data) {
     });
 
     if (!res.ok) throw new Error("Error al registrar");
-
     return await res.json();
   } catch (error) {
     console.error("Error en registerUser:", error.message);
-    return null;
+    return "Error";
   }
 }
